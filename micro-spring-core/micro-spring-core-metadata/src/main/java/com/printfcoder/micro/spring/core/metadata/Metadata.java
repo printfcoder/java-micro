@@ -1,4 +1,4 @@
-package com.printfcoder.micro.core.metadata;
+package com.printfcoder.micro.spring.core.metadata;
 
 import java.util.HashMap;
 

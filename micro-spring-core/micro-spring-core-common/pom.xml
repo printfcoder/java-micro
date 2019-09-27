@@ -9,5 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>micro-spring-core-metadata</artifactId>
+    <artifactId>micro-spring-core-common</artifactId>
+
+
 </project>

@@ -11,5 +11,10 @@
 
     <artifactId>micro-spring-core-context</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <artifactId>micro-spring-core-metadata</artifactId>
+            <groupId>com.printfcoder.micro</groupId>
+        </dependency>
+    </dependencies>
 </project>

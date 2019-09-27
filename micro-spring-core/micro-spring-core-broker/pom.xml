@@ -11,5 +11,22 @@
 
     <artifactId>micro-spring-core-broker</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.printfcoder.micro</groupId>
+            <artifactId>micro-spring-core-codec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.printfcoder.micro</groupId>
+            <artifactId>micro-spring-core-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.printfcoder.micro</groupId>
+            <artifactId>micro-spring-core-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.printfcoder.micro</groupId>
+            <artifactId>micro-spring-core-registry</artifactId>
+        </dependency>
+    </dependencies>
 </project>

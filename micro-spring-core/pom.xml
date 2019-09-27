@@ -21,7 +21,15 @@
         <module>micro-spring-core-metadata</module>
         <module>micro-spring-core-service</module>
         <module>micro-spring-core-context</module>
+        <module>micro-spring-core-common</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
 </project>

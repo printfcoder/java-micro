@@ -1,5 +1,8 @@
 package com.printfcoder.micro.core.context;
 
+import com.printfcoder.micro.core.context.exception.ContextKeyNullException;
+import lombok.Data;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -43,5 +46,7 @@ public class MicroContext implements Cloneable {
         return this;
     }
 
-
+    public Object getValue(String key) {
+        return values.get(key);
+    }
 }
