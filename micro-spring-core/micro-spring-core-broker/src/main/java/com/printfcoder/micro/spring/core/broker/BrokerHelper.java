@@ -9,6 +9,7 @@ import com.printfcoder.micro.spring.core.codec.Marshaler;
  * 2019/9/27
  **/
 public class BrokerHelper {
+
     public static SubscribeOptions newSubscribeOptions(SubscribeOption... opts) {
         SubscribeOptions opt = new SubscribeOptions();
         opt.setAutoAck(true);
@@ -43,6 +44,13 @@ public class BrokerHelper {
     }
 
     public static Option registry(Registry r) {
-        return o -> o.setContext(MicroContext.setContext(o.getContext()));
+        return o -> o.setContext(MicroContext.getContext().setValue(Constants.BROKER_REGISTRY_KEY, r));
     }
+
+    // Secure communication with the broker
+    public static Option secure(boolean secure) {
+        return o -> o.setSecure(secure);
+    }
+
+    // todo TLSConfig
 }
