@@ -20,5 +20,9 @@
             <artifactId>micro-spring-core-context</artifactId>
             <groupId>com.printfcoder.micro</groupId>
         </dependency>
+        <dependency>
+            <artifactId>micro-spring-core-transport</artifactId>
+            <groupId>com.printfcoder.micro</groupId>
+        </dependency>
     </dependencies>
 </project>

@@ -1,5 +1,22 @@
 package com.printfcoder.micro.spring.core.client.selector;
 
-public class SelectOptions {
+import com.printfcoder.micro.core.context.MicroContext;
+import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@Data
+public class SelectOptions {
+    private List<Filter> filters;
+    private Strategy strategy;
+    private MicroContext context;
+
+    public void setFilters(List<Filter> filters) {
+        if (this.filters == null) {
+            this.filters = new ArrayList<>();
+        }
+
+        this.filters.addAll(filters);
+    }
 }

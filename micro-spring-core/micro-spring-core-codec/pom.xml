@@ -10,6 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>micro-spring-core-codec</artifactId>
-
+    <dependencies>
+        <dependency>
+            <artifactId>micro-spring-core-common</artifactId>
+            <groupId>com.printfcoder.micro</groupId>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -1,7 +1,7 @@
 package com.printfcoder.micro.spring.core.client.selector;
 
 import com.printfcoder.micro.core.context.MicroContext;
-import com.printfcoder.micro.spring.core.broker.Broker;
+import com.printfcoder.micro.core.registry.Registry;
 import lombok.Data;
 
 /**
@@ -10,13 +10,7 @@ import lombok.Data;
  **/
 @Data
 public class Options {
-    private String contentType;
-
-    // todo broker
-    private Broker broker;
-
-    // todo TLS
-    // private TLSConfig tLSConfig;
-
+    private Registry registry;
+    private Strategy strategy;
     private MicroContext context;
 }
