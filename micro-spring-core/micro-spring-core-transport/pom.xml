@@ -11,5 +11,18 @@
 
     <artifactId>micro-spring-core-transport</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.printfcoder.micro</groupId>
+            <artifactId>micro-spring-core-codec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.printfcoder.micro</groupId>
+            <artifactId>micro-spring-core-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.printfcoder.micro</groupId>
+            <artifactId>micro-spring-core-context</artifactId>
+        </dependency>
+    </dependencies>
 </project>
