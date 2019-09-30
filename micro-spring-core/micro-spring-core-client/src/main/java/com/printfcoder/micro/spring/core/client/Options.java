@@ -5,6 +5,7 @@ import com.printfcoder.micro.core.registry.Registry;
 import com.printfcoder.micro.spring.core.broker.Broker;
 import com.printfcoder.micro.spring.core.client.selector.Selector;
 import com.printfcoder.micro.spring.core.codec.NewCodec;
+import com.printfcoder.micro.spring.core.transport.Transport;
 import lombok.Data;
 
 import java.time.Duration;
@@ -27,8 +28,7 @@ public class Options {
 
     private Selector selector;
 
-    // todo transport
-    // Transport
+    private Transport transport;
 
     private Integer poolSize;
     private Duration poolTTL;
