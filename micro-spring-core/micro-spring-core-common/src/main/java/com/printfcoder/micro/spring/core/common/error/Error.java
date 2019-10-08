@@ -6,4 +6,6 @@ package com.printfcoder.micro.spring.core.common.error;
  **/
 public interface Error {
     String Error();
+
+    int code();
 }
