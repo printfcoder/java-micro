@@ -11,9 +11,9 @@ public interface Socket {
 
     void send(Message message) throws MicroRpcException;
 
-    void close();
+    void close() throws MicroRpcException;
 
-    void local();
+    String local();
 
-    void remote();
+    String remote();
 }

@@ -42,8 +42,6 @@ public class CallOptions {
 
     private Duration requestTimeout;
 
-
-
     public BackOffFunc backOff() {
         return this.backOff;
     }

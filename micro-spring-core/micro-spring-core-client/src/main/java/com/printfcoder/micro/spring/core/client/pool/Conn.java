@@ -1,7 +1,8 @@
 package com.printfcoder.micro.spring.core.client.pool;
 
 import com.printfcoder.micro.spring.core.transport.Client;
-import java.sql.Date;
+
+import java.util.Date;
 
 /**
  * Pool is an interface for connection pooling
