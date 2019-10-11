@@ -77,6 +77,12 @@
                 <groupId>com.printfcoder.micro</groupId>
                 <version>${micro-spring.version}</version>
             </dependency>
+            <dependency>
+                <artifactId>micro-spring-core-impl-client</artifactId>
+                <groupId>com.printfcoder.micro</groupId>
+                <version>${micro-spring.version}</version>
+            </dependency>
+
             <!-- endregion -->
 
             <!-- region compile utils -->
