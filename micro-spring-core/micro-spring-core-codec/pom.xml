@@ -15,6 +15,11 @@
             <artifactId>micro-spring-core-common</artifactId>
             <groupId>com.printfcoder.micro</groupId>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

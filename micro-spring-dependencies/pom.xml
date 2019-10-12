@@ -18,6 +18,7 @@
         <micro-spring.version>1.0.0-SNAPSHOT</micro-spring.version>
         <lombok.version>1.18.10</lombok.version>
         <java.version>1.8</java.version>
+        <protobuf-java.version>3.10.0</protobuf-java.version>
     </properties>
 
     <dependencies>
@@ -83,6 +84,15 @@
                 <version>${micro-spring.version}</version>
             </dependency>
 
+            <!-- endregion -->
+
+            <!-- region protobuf -->
+
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf-java.version}</version>
+            </dependency>
             <!-- endregion -->
 
             <!-- region compile utils -->

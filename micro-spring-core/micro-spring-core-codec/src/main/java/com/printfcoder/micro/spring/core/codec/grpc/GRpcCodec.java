@@ -8,6 +8,7 @@ import com.printfcoder.micro.spring.core.common.io.Reader;
 import lombok.Data;
 
 /**
+ * todo
  * @author <a href=mailto:i@shux.me>Printfcoder</a>
  * 2019/10/11
  **/
@@ -51,11 +52,9 @@ public class GRpcCodec {
         }
 
 
-
     }
 
     private void decode(Reader r) {
-        java.io.Reader
 
     }
 }
