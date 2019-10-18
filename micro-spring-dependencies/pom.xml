@@ -17,8 +17,10 @@
     <properties>
         <micro-spring.version>1.0.0-SNAPSHOT</micro-spring.version>
         <lombok.version>1.18.10</lombok.version>
+        <google-guava.version>28.1-jre</google-guava.version>
         <java.version>1.8</java.version>
         <protobuf-java.version>3.10.0</protobuf-java.version>
+        <apache-common3.version>3.9</apache-common3.version>
     </properties>
 
     <dependencies>
@@ -87,10 +89,14 @@
             <!-- endregion -->
 
             <!-- region protobuf -->
-
             <dependency>
                 <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
+                <version>${protobuf-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java-util</artifactId>
                 <version>${protobuf-java.version}</version>
             </dependency>
             <!-- endregion -->
@@ -101,6 +107,22 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <!-- endregion -->
+
+            <!-- region google utils -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${google-guava.version}</version>
+            </dependency>
+            <!-- endregion -->
+
+            <!-- region apache utils -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${apache-common3.version}</version>
             </dependency>
             <!-- endregion -->
         </dependencies>
