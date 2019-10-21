@@ -7,5 +7,5 @@ import com.printfcoder.micro.spring.core.common.exception.MicroRpcException;
  * 2019/9/25
  **/
 public interface Codec extends Reader, Writer {
-    void Close() throws MicroRpcException;
+    void close() throws MicroRpcException;
 }

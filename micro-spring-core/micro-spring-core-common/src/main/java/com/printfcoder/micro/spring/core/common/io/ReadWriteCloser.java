@@ -5,7 +5,5 @@ package com.printfcoder.micro.spring.core.common.io;
  * 2019/9/29
  **/
 public interface ReadWriteCloser extends Reader, Writer {
-    byte[] readAll();
-
     int write(byte[] bytes);
 }

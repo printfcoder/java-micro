@@ -1,5 +1,7 @@
 package com.printfcoder.micro.spring.core.codec;
 
+import com.printfcoder.micro.spring.core.common.io.AbstractByteBuf;
+
 import java.io.IOException;
 
 /**
@@ -7,7 +9,7 @@ import java.io.IOException;
  * 2019/9/26
  **/
 public interface Reader {
-    void ReadHeader(Message msg, int msgType);
+    void readHeader(Message msg, int msgType);
 
-    Object ReadBody() throws IOException;
+    Object readBody(AbstractByteBuf data) throws IOException;
 }

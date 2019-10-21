@@ -5,5 +5,5 @@ package com.printfcoder.micro.spring.core.codec;
  * 2019/9/26
  **/
 public interface Writer {
-    void Write(Message msg, Object obj);
+    void write(Message msg, Object obj);
 }

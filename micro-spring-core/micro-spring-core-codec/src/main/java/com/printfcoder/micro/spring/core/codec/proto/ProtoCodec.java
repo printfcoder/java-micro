@@ -3,6 +3,7 @@ package com.printfcoder.micro.spring.core.codec.proto;
 import com.printfcoder.micro.spring.core.codec.Codec;
 import com.printfcoder.micro.spring.core.codec.Message;
 import com.printfcoder.micro.spring.core.common.exception.MicroRpcException;
+import com.printfcoder.micro.spring.core.common.io.AbstractByteBuf;
 import com.printfcoder.micro.spring.core.common.io.ReadWriteCloser;
 
 import java.io.IOException;
@@ -21,18 +22,21 @@ public class ProtoCodec implements Codec {
     }
 
     @Override
-    public void ReadHeader(Message msg, int msgType) {
+    public void readHeader(Message msg, int msgType) {
         // do nothing
     }
 
     @Override
-    public com.google.protobuf.Message ReadBody() throws IOException {
-        byte[] buff = this.conn.readAll();
+    public com.google.protobuf.Message readBody(AbstractByteBuf data) throws IOException {
+        if (data == null || data.readableBytes() == 0) {
+            com.google.protobuf.Message.Builder builder = new
+        }
 
+        return null;
     }
 
     @Override
-    public void Write(Message msg, Object obj) {
+    public void write(Message msg, Object obj) {
         if (!(obj instanceof com.google.protobuf.Message)) {
             return;
         }
@@ -43,7 +47,7 @@ public class ProtoCodec implements Codec {
 
 
     @Override
-    public void Close() throws MicroRpcException {
+    public void close() throws MicroRpcException {
         try {
             this.conn.close();
         } catch (IOException e) {
