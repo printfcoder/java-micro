@@ -3,13 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>micro-spring</artifactId>
-        <groupId>com.printfcoder.micro</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+     <artifactId>java-micro</artifactId>
+        <groupId>mu.micro.java.framework</groupId>
+        <version>1.0.0-DEV-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <artifactId>plugins</artifactId>
 
-    <artifactId>micro-spring-plugins</artifactId>
-
-
+    <modules>
+        <module>client-sofa-rpc</module>
+        <module>registry-zookeeper</module>
+    </modules>
 </project>

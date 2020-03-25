@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <version>1.0.0-DEV-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>mu.micro.java.framework</groupId>
+    <artifactId>bom</artifactId>
+
+    <properties>
+        <curator-framework.version>4.0.1</curator-framework.version>
+        <lombok.version>1.16.22</lombok.version>
+        <!-- Build args -->
+        <module.install.skip>true</module.install.skip>
+        <module.deploy.skip>true</module.deploy.skip>
+        <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- region 自依赖 -->
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>broker</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>client</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>codec</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>common</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>context</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>metadata</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>registry</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>server</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>service</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>transport</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <!-- endregion 自依赖 -->
+
+            <!-- region zk-->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator-framework.version}</version>
+            </dependency>
+            <!-- endregion zk-->
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>compile</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+                <configuration>
+                    <skip>${module.install.skip}</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+                <configuration>
+                    <skip>${module.deploy.skip}</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
