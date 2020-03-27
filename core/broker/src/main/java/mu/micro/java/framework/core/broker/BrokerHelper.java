@@ -1,7 +1,7 @@
 package mu.micro.java.framework.core.broker;
 
 import mu.micro.java.framework.core.codec.Marshaler;
-import mu.micro.java.framework.core.context.QingniaoContext;
+import mu.micro.java.framework.core.context.MicroContext;
 import mu.micro.java.framework.core.registry.Registry;
 
 
@@ -41,7 +41,7 @@ public class BrokerHelper {
     }
 
     public static Option registry(Registry r) {
-        return o -> o.setContext(QingniaoContext.getContext().setValue(Constants.BROKER_REGISTRY_KEY, r));
+        return o -> o.setContext(MicroContext.getContext().setValue(Constants.BROKER_REGISTRY_KEY, r));
     }
 
     // Secure communication with the broker

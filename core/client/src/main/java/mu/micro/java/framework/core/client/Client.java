@@ -1,12 +1,12 @@
 package mu.micro.java.framework.core.client;
 
 import mu.micro.java.framework.core.broker.PublishOption;
-import mu.micro.java.framework.core.common.exception.QingniaoRpcException;
-import mu.micro.java.framework.core.context.QingniaoContext;
+import mu.micro.java.framework.core.common.exception.MicroException;
+import mu.micro.java.framework.core.context.MicroContext;
 
 
 public interface Client {
-    void init(Option... options) throws QingniaoRpcException;
+    void init(Option... options) throws MicroException;
 
     Options options();
 
@@ -14,9 +14,9 @@ public interface Client {
 
     Request newRequest(String service, String endpoint, Object req, RequestOption... reqOpts);
 
-    void call(QingniaoContext ctx, Request request, Object rsp, CallOption... opts) throws QingniaoRpcException;
+    void call(MicroContext ctx, Request request, Object rsp, CallOption... opts) throws MicroException;
 
-    Stream stream(QingniaoContext ctx, Request request, CallOption... opts) throws QingniaoRpcException;
+    Stream stream(MicroContext ctx, Request request, CallOption... opts) throws MicroException;
 
-    void publish(QingniaoContext ctx, Message message, PublishOption... opts) throws QingniaoRpcException;
+    void publish(MicroContext ctx, Message message, PublishOption... opts) throws MicroException;
 }

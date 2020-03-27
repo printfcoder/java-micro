@@ -1,7 +1,7 @@
 package mu.micro.java.framework.core.client;
 
-import mu.micro.java.framework.core.common.struct.Func;
+import mu.micro.java.framework.core.common.struct.FuncVoid;
 
 
-public interface CallOption extends Func<CallOptions> {
+public interface CallOption extends FuncVoid<CallOptions> {
 }

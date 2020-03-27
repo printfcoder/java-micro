@@ -9,7 +9,6 @@
     <groupId>mu.micro.java.framework</groupId>
 
     <modules>
-        <module>bom</module>
         <module>core</module>
         <module>plugins</module>
     </modules>

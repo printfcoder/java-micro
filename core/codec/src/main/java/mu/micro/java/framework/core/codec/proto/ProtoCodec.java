@@ -2,7 +2,7 @@ package mu.micro.java.framework.core.codec.proto;
 
 import mu.micro.java.framework.core.codec.Codec;
 import mu.micro.java.framework.core.codec.Message;
-import mu.micro.java.framework.core.common.exception.QingniaoRpcException;
+import mu.micro.java.framework.core.common.exception.MicroException;
 import mu.micro.java.framework.core.common.io.AbstractByteBuf;
 import mu.micro.java.framework.core.common.io.ReadWriteCloser;
 
@@ -42,11 +42,11 @@ public class ProtoCodec implements Codec {
 
 
     @Override
-    public void close() throws QingniaoRpcException {
+    public void close() throws MicroException {
         try {
             this.conn.close();
         } catch (IOException e) {
-            throw new QingniaoRpcException(500, e);
+            throw new MicroException(500, e);
         }
     }
 
@@ -57,11 +57,11 @@ public class ProtoCodec implements Codec {
             try {
                 int read = in.read(retval, bytesRead, totalSize - bytesRead);
                 if (read == -1) {
-                    throw new QingniaoRpcException(500, "Unable to read complete request or response");
+                    throw new MicroException(500, "Unable to read complete request or response");
                 }
                 bytesRead += read;
             } catch (IOException e) {
-                throw new QingniaoRpcException(500, "IOException reading data: " + e);
+                throw new MicroException(500, "IOException reading data: " + e);
             }
         }
         return retval;

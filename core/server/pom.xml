@@ -12,4 +12,36 @@
     <artifactId>server</artifactId>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>mu.micro.java.framework</groupId>
+            <artifactId>codec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mu.micro.java.framework</groupId>
+            <artifactId>broker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mu.micro.java.framework</groupId>
+            <artifactId>context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mu.micro.java.framework</groupId>
+            <artifactId>registry</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mu.micro.java.framework</groupId>
+            <artifactId>transport</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mu.micro.java.framework</groupId>
+            <artifactId>metadata</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 </project>

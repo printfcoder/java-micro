@@ -1,6 +1,6 @@
 package mu.micro.java.framework.core.common.util;
 
-import mu.micro.java.framework.core.common.exception.QingniaoRpcException;
+import mu.micro.java.framework.core.common.exception.MicroException;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -20,7 +20,7 @@ public final class ClassUtil {
         try {
             return Class.forName(className, initialize, ClassLoaderUtils.getCurrentClassLoader());
         } catch (Exception e) {
-            throw new QingniaoRpcException(500, e);
+            throw new MicroException(500, e);
         }
     }
 
@@ -28,7 +28,7 @@ public final class ClassUtil {
         try {
             return Class.forName(className, true, cl);
         } catch (Exception e) {
-            throw new QingniaoRpcException(500, e);
+            throw new MicroException(500, e);
         }
     }
 
@@ -66,7 +66,7 @@ public final class ClassUtil {
         return all;
     }
 
-    public static <T> T newInstance(Class<T> clazz) throws QingniaoRpcException {
+    public static <T> T newInstance(Class<T> clazz) throws MicroException {
         if (clazz.isPrimitive()) {
             return (T) getDefaultPrimitiveValue(clazz);
         }
@@ -90,7 +90,7 @@ public final class ClassUtil {
             // 不行的话，找一个最少参数的构造函数
             Constructor<T>[] constructors = (Constructor<T>[]) clazz.getDeclaredConstructors();
             if (constructors == null || constructors.length == 0) {
-                throw new QingniaoRpcException(500, "The " + clazz.getCanonicalName() + " has no default constructor!");
+                throw new MicroException(500, "The " + clazz.getCanonicalName() + " has no default constructor!");
             }
             Constructor<T> constructor = constructors[0];
             if (constructor.getParameterTypes().length > 0) {
@@ -111,15 +111,15 @@ public final class ClassUtil {
                 args[i] = getDefaultPrimitiveValue(argTypes[i]);
             }
             return constructor.newInstance(args);
-        } catch (QingniaoRpcException e) {
+        } catch (MicroException e) {
             throw e;
         } catch (Throwable e) {
-            throw new QingniaoRpcException(500, e.getMessage(), e);
+            throw new MicroException(500, e.getMessage(), e);
         }
     }
 
     public static <T> T newInstanceWithArgs(Class<T> clazz, Class<?>[] argTypes, Object[] args)
-            throws QingniaoRpcException {
+            throws MicroException {
         if (CommonUtils.isEmpty(argTypes)) {
             return newInstance(clazz);
         }
@@ -131,7 +131,7 @@ public final class ClassUtil {
             } else {
                 Constructor<T>[] constructors = (Constructor<T>[]) clazz.getDeclaredConstructors();
                 if (constructors == null || constructors.length == 0) {
-                    throw new QingniaoRpcException(500,
+                    throw new MicroException(500,
                             "The " + clazz.getCanonicalName() + " has no constructor with argTypes :" + Arrays.toString(argTypes));
                 }
                 Constructor<T> constructor = null;
@@ -152,7 +152,7 @@ public final class ClassUtil {
                     }
                 }
                 if (constructor == null) {
-                    throw new QingniaoRpcException(500,
+                    throw new MicroException(500,
                             "The " + clazz.getCanonicalName() + " has no constructor with argTypes :" + Arrays.toString(argTypes));
                 } else {
                     constructor.setAccessible(true);
@@ -161,10 +161,10 @@ public final class ClassUtil {
                     return constructor.newInstance(newArgs);
                 }
             }
-        } catch (QingniaoRpcException e) {
+        } catch (MicroException e) {
             throw e;
         } catch (Throwable e) {
-            throw new QingniaoRpcException(500, e.getMessage(), e);
+            throw new MicroException(500, e.getMessage(), e);
         }
     }
 

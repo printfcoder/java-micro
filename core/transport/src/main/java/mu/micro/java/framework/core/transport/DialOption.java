@@ -1,7 +1,7 @@
 package mu.micro.java.framework.core.transport;
 
-import mu.micro.java.framework.core.common.struct.Func;
+import mu.micro.java.framework.core.common.struct.FuncVoid;
 
 
-public interface DialOption extends Func<DialOptions> {
+public interface DialOption extends FuncVoid<DialOptions> {
 }

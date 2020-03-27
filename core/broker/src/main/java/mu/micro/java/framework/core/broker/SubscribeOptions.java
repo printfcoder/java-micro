@@ -1,6 +1,6 @@
 package mu.micro.java.framework.core.broker;
 
-import mu.micro.java.framework.core.context.QingniaoContext;
+import mu.micro.java.framework.core.context.MicroContext;
 import lombok.Data;
 
 
@@ -8,5 +8,5 @@ import lombok.Data;
 public class SubscribeOptions {
     private Boolean autoAck;
     private String queue;
-    private QingniaoContext context;
+    private MicroContext context;
 }

@@ -3,7 +3,7 @@ package mu.micro.java.framework.core.client;
 import mu.micro.java.framework.core.broker.Broker;
 import mu.micro.java.framework.core.client.selector.Selector;
 import mu.micro.java.framework.core.codec.NewCodec;
-import mu.micro.java.framework.core.context.QingniaoContext;
+import mu.micro.java.framework.core.context.MicroContext;
 import mu.micro.java.framework.core.registry.Registry;
 import mu.micro.java.framework.core.transport.Transport;
 import lombok.Data;
@@ -36,5 +36,5 @@ public class Options {
     // todo TLS
     // private TLSConfig tLSConfig;
 
-    private QingniaoContext context;
+    private MicroContext context;
 }

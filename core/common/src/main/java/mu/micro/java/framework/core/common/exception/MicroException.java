@@ -4,24 +4,24 @@ import lombok.Data;
 
 
 @Data
-public class QingniaoRpcException extends RuntimeException {
+public class MicroException extends RuntimeException {
     protected int errorCode;
 
-    protected QingniaoRpcException() {
+    protected MicroException() {
 
     }
 
-    public QingniaoRpcException(int errorCode, String msg) {
+    public MicroException(int errorCode, String msg) {
         super(msg);
         this.errorCode = errorCode;
     }
 
-    public QingniaoRpcException(int errorCode, Throwable cause) {
+    public MicroException(int errorCode, Throwable cause) {
         super(cause);
         this.errorCode = errorCode;
     }
 
-    public QingniaoRpcException(int errorCode, String msg, Throwable cause) {
+    public MicroException(int errorCode, String msg, Throwable cause) {
         super(msg, cause);
         this.errorCode = errorCode;
     }

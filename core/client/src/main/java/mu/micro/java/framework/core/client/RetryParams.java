@@ -1,14 +1,14 @@
 package mu.micro.java.framework.core.client;
 
-import mu.micro.java.framework.core.common.error.QingniaoError;
-import mu.micro.java.framework.core.context.QingniaoContext;
+import mu.micro.java.framework.core.common.error.MicroError;
+import mu.micro.java.framework.core.context.MicroContext;
 import lombok.Data;
 
 
 @Data
 public class RetryParams {
-    private QingniaoContext context;
+    private MicroContext context;
     private Request request;
     private int retryCount;
-    private QingniaoError err;
+    private MicroError err;
 }

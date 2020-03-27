@@ -1,7 +1,7 @@
 package mu.micro.java.framework.core.client;
 
 import mu.micro.java.framework.core.codec.Reader;
-import mu.micro.java.framework.core.common.exception.QingniaoRpcException;
+import mu.micro.java.framework.core.common.exception.MicroException;
 
 import java.util.Map;
 
@@ -14,5 +14,5 @@ public interface Response {
     Map<String, String> header();
 
     // Read the response not decoded
-    byte[] read() throws QingniaoRpcException;
+    byte[] read() throws MicroException;
 }

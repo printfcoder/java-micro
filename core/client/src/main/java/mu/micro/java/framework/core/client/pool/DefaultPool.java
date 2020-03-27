@@ -1,7 +1,7 @@
 package mu.micro.java.framework.core.client.pool;
 
-import mu.micro.java.framework.core.common.error.QingniaoError;
-import mu.micro.java.framework.core.common.exception.QingniaoRpcException;
+import mu.micro.java.framework.core.common.error.MicroError;
+import mu.micro.java.framework.core.common.exception.MicroException;
 import mu.micro.java.framework.core.transport.Client;
 import mu.micro.java.framework.core.transport.DialOption;
 import mu.micro.java.framework.core.transport.Transport;
@@ -31,7 +31,7 @@ public class DefaultPool implements Pool {
     }
 
     @Override
-    public synchronized void close() throws QingniaoRpcException {
+    public synchronized void close() throws MicroException {
         conns.entrySet().removeIf(e -> {
             conns.get(e).forEach(conn -> conn.client().close());
             return true;
@@ -39,7 +39,7 @@ public class DefaultPool implements Pool {
     }
 
     @Override
-    public Conn get(String addr, DialOption... opts) throws QingniaoRpcException {
+    public Conn get(String addr, DialOption... opts) throws MicroException {
         lock.lock();
         List<DefaultPoolConn> pools = this.conns.get(addr);
 
@@ -69,7 +69,7 @@ public class DefaultPool implements Pool {
     }
 
     @Override
-    public void release(Conn c, QingniaoError status) throws QingniaoRpcException {
+    public void release(Conn c, MicroError status) throws MicroException {
         // don't store the conn if it has errored
         if (status != null) {
             c.client().close();

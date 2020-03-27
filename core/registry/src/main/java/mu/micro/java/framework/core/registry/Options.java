@@ -1,6 +1,6 @@
 package mu.micro.java.framework.core.registry;
 
-import mu.micro.java.framework.core.context.QingniaoContext;
+import mu.micro.java.framework.core.context.MicroContext;
 import lombok.Data;
 
 import java.time.Duration;
@@ -13,5 +13,5 @@ public class Options {
     private Boolean secure;
     // todo tls
     // private TLSConfig tls;
-    private QingniaoContext context;
+    private MicroContext context;
 }

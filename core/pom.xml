@@ -28,15 +28,86 @@
     </modules>
 
     <properties>
+        <curator-framework.version>4.0.1</curator-framework.version>
+        <lombok.version>1.16.22</lombok.version>
+
         <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
         <module.install.skip>true</module.install.skip>
         <module.deploy.skip>true</module.deploy.skip>
         <skipTests>false</skipTests>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
     <dependencyManagement>
         <dependencies>
+            <!-- region zk-->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator-framework.version}</version>
+            </dependency>
+            <!-- endregion zk-->
 
+            <!-- region 自依赖 -->
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>broker</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>client</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>codec</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>common</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>context</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>metadata</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>registry</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>server</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>service</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro.java.framework</groupId>
+                <artifactId>transport</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <!-- endregion 自依赖 -->
         </dependencies>
     </dependencyManagement>
 

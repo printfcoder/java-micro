@@ -1,7 +1,7 @@
 package mu.micro.java.framework.core.transport;
 
-import mu.micro.java.framework.core.common.exception.QingniaoRpcException;
-import mu.micro.java.framework.core.common.struct.Func;
+import mu.micro.java.framework.core.common.exception.MicroException;
+import mu.micro.java.framework.core.common.struct.FuncVoid;
 
 
 public interface Listener {
@@ -9,5 +9,5 @@ public interface Listener {
 
     void close();
 
-    void accept(Func<Socket> func) throws QingniaoRpcException;
+    void accept(FuncVoid<Socket> func) throws MicroException;
 }

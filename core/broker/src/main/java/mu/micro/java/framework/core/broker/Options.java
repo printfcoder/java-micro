@@ -1,7 +1,7 @@
 package mu.micro.java.framework.core.broker;
 
 import mu.micro.java.framework.core.codec.Marshaler;
-import mu.micro.java.framework.core.context.QingniaoContext;
+import mu.micro.java.framework.core.context.MicroContext;
 import lombok.Data;
 
 
@@ -14,5 +14,5 @@ public class Options {
     // todo TLS
     // private
 
-    private QingniaoContext context;
+    private MicroContext context;
 }

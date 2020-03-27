@@ -1,6 +1,6 @@
 package mu.micro.java.framework.core.client;
 
-import mu.micro.java.framework.core.context.QingniaoContext;
+import mu.micro.java.framework.core.context.MicroContext;
 import lombok.Data;
 
 
@@ -11,5 +11,5 @@ public class RequestOptions {
 
     // Other options for implementations of the interface
     // can be stored in a context
-    QingniaoContext context;
+    MicroContext context;
 }

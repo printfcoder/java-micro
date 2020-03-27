@@ -1,7 +1,7 @@
 package mu.micro.java.framework.core.registry;
 
-import mu.micro.java.framework.core.common.struct.Func;
+import mu.micro.java.framework.core.common.struct.FuncVoid;
 
 
-public interface RegisterOption extends Func<RegisterOptions> {
+public interface RegisterOption extends FuncVoid<RegisterOptions> {
 }

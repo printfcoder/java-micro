@@ -1,6 +1,6 @@
 package mu.micro.java.framework.core.client.selector;
 
-import mu.micro.java.framework.core.context.QingniaoContext;
+import mu.micro.java.framework.core.context.MicroContext;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import java.util.List;
 public class SelectOptions {
     private List<Filter> filters;
     private Strategy strategy;
-    private QingniaoContext context;
+    private MicroContext context;
 
     public void setFilters(List<Filter> filters) {
         if (this.filters == null) {

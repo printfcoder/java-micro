@@ -1,11 +1,11 @@
 package mu.micro.java.framework.core.common.error;
 
 
-public class QingniaoError implements Error {
+public class MicroError implements Error {
     private int code;
     private String error;
 
-    public QingniaoError(int code, String error) {
+    public MicroError(int code, String error) {
         this.code = code;
         this.error = error;
     }

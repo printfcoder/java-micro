@@ -1,6 +1,6 @@
 package mu.micro.java.framework.core.transport;
 
-import mu.micro.java.framework.core.context.QingniaoContext;
+import mu.micro.java.framework.core.context.MicroContext;
 import lombok.Data;
 
 import java.time.Duration;
@@ -17,5 +17,5 @@ public class DialOptions {
 
     // other options for implementations of the interface
     // can be stored in a context
-    private QingniaoContext context;
+    private MicroContext context;
 }

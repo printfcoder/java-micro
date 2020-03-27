@@ -1,9 +1,9 @@
 package mu.micro.java.framework.core.broker;
 
-import mu.micro.java.framework.core.context.QingniaoContext;
+import mu.micro.java.framework.core.context.MicroContext;
 import lombok.Data;
 
 @Data
 public class PublishOptions {
-    private QingniaoContext context;
+    private MicroContext context;
 }

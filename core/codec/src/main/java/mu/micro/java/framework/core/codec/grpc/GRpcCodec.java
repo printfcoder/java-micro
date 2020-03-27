@@ -2,7 +2,7 @@ package mu.micro.java.framework.core.codec.grpc;
 
 import mu.micro.java.framework.core.codec.Message;
 import mu.micro.java.framework.core.codec.MessageType;
-import mu.micro.java.framework.core.common.exception.QingniaoRpcException;
+import mu.micro.java.framework.core.common.exception.MicroException;
 import mu.micro.java.framework.core.common.io.ReadWriteCloser;
 import mu.micro.java.framework.core.common.io.Reader;
 import lombok.Data;
@@ -25,13 +25,13 @@ public class GRpcCodec {
         // service method
         String path = m.getHeader().get(":path");
         if (path == null || path.length() == 0 || !path.startsWith("/")) {
-            m.setTarget(m.getHeader().get("Qingniao-Service"));
-            m.setEndpoint(m.getHeader().get("Qingniao-Endpoint"));
+            m.setTarget(m.getHeader().get("Micro-Service"));
+            m.setEndpoint(m.getHeader().get("Micro-Endpoint"));
         } else {
             // [, a.package.Foo, Bar]
             String[] parts = path.split("/");
             if (parts.length != 3) {
-                throw new QingniaoRpcException(500, "Unknown request path");
+                throw new MicroException(500, "Unknown request path");
             }
 
             String[] service = parts[1].split(".");
